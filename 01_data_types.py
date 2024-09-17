@@ -94,6 +94,14 @@ Then print out the both the original string and tuple.
 """
 def task_5():
 
+    #String version of the list
     string_var=("1,5,2,35,59")
-    num_list= string_var.split(",")
-    print(num_list)
+
+    #Using split() to turn string into a list, then tuple() to turn the list into a tuple
+    num_tuple= tuple(string_var.split(","))
+
+    #Prints both string and tuple
+    print(string_var)
+    print(num_tuple)
+
+task_5()
