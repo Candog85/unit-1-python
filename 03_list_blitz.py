@@ -60,7 +60,7 @@ Delete an element at a specific index. Print the updated
 list.
 """
 
-#Deletes the item of index 1 and pronts the updated list
+#Deletes the item of index 1 and prints the updated list
 del list_var[2]
 print(list_var)
 
@@ -69,11 +69,16 @@ Task 7: Subsetting lists
 Create a new variable equal to the first 2 items of your list
 Then print out the new variable
 """
-
-new_list=(list_var[1]+)
+#Combines fist and second index of the original list into a new list and prints it
+new_list=[list_var[0], list_var[1]]
+print(new_list)
 
 """
 Task 8: Extend a List
 Extend the list with the elements of another list. Print 
 the updated list.
 """
+
+#Combines original and new list into the original list and prints
+list_var=list_var+new_list
+print(list_var)
