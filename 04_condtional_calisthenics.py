@@ -17,7 +17,7 @@ def task_1():
         print(False)
 
 
-task_1()
+#task_1()
 
 '''
 Exercise 2:
@@ -42,7 +42,7 @@ def task_2():
     #Prints the price calculated
     print(f"The price is ${price}")
 
-task_2()
+#task_2()
 
 '''
 Exercise 3:
@@ -75,7 +75,12 @@ Check if a year is a century year and a leap year.
 
 def task_4():
     year=2023
-    if year%100 and year%3
+    if year%100==0 and year%3==0:
+        print("This year is a leap year and century year!")
+    else:
+        print("This year is either not a century or not a leap year")
+
+#task_4():
 
 '''
 Exercise 5:
@@ -84,8 +89,52 @@ The shipping cost is $5 per kilogram for Zone A and $7 per kilogram for Zone B.
 If the order weight is less than 0 kg, return an error message.
 '''
 
+def task_5():
+
+    #Takes user input for zone, lowercases it
+    destination=input("Zone a or b?: ").lower()
+
+    #If the user inputs a zone thats not "a" or "b", prints error message and restarts function
+    if not(destination=="a" or destination=="b"):
+        print("Enter a valid zone!")
+        task_5()
+
+    #Takes input for weight and makes it a float
+    weight=float(input("How much does it weigh?: "))
+
+    #If the user inputs weight that is not a positive number, prints error message and restarts function
+    if weight<=0:
+        print("Error, enter a value over 0!")
+        task_5()
+
+    #If zone a is chosen, cost is $5 per kg
+    if destination=="a":
+        cost=weight*5
+
+    #If zone b is chosen, cost is $7 per kg
+    elif destination=="b":
+        cost=weight*7
+    
+    #prints resulting cost
+    print(f"This package will cost ${cost} to ship.")
+
+#task_5()
+    
+
 '''
 Exercise 6:
 Determine the type of a triangle based on side lengths.
 Equilateral, Isosceles, Scalene, or Not a triangle.
 '''
+
+def task_6():
+    sides=[
+        float(input("Enter side 1 length: ")), 
+        float(input("Enter side 2 length: ")), 
+        float(input("Enter side 3 length: "))
+    ]
+
+    if sides[0]==sides[1]==sides[2]:
+        print("This triangle is equilateral!")
+    print(sides)
+task_6()
