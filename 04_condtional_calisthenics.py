@@ -17,7 +17,7 @@ def task_1():
         print(False)
 
 
-#task_1()
+task_1()
 
 '''
 Exercise 2:
@@ -42,7 +42,7 @@ def task_2():
     #Prints the price calculated
     print(f"The price is ${price}")
 
-#task_2()
+task_2()
 
 '''
 Exercise 3:
@@ -67,6 +67,7 @@ def task_3():
     else:
         print("The fruit is not in the list")
 
+task_3()
 
 '''
 Exercise 4:
@@ -80,7 +81,7 @@ def task_4():
     else:
         print("This year is either not a century or not a leap year")
 
-#task_4():
+task_4()
 
 '''
 Exercise 5:
@@ -118,7 +119,7 @@ def task_5():
     #prints resulting cost
     print(f"This package will cost ${cost} to ship.")
 
-#task_5()
+task_5()
     
 
 '''
@@ -128,13 +129,42 @@ Equilateral, Isosceles, Scalene, or Not a triangle.
 '''
 
 def task_6():
+
+    #Makes a list of all 3 side lengths
     sides=[
         float(input("Enter side 1 length: ")), 
         float(input("Enter side 2 length: ")), 
         float(input("Enter side 3 length: "))
     ]
 
-    if sides[0]==sides[1]==sides[2]:
+    #Checks if triangle is impossible (two sides combined less than the other)
+    if (
+        sides[0]+sides[1]<=sides[2]
+        or
+        sides[1]+sides[2]<=sides[0]
+        or
+        sides[2]+sides[0]<=sides[1]
+    ):
+        print("Invalid triangle")
+        task_6()
+
+    #Checks if triangle is equalateral
+    elif sides[0]==sides[1]==sides[2]:
         print("This triangle is equilateral!")
-    print(sides)
+    
+    #Checks if triangle is isoceles (two sides equal ONLY)
+    elif (
+        sides[0]==sides[1]!=sides[2]
+    ) or (
+        sides[1]==sides[2]!=sides[0]
+    ) or (
+        sides[2]==sides[0]!=sides[1]
+    ): 
+        print("This triangle is isoceles!")
+    
+    #If not the other three, the triangle must be scaline
+    else:
+        print("This triangle is scaline!")
+    
+        
 task_6()
