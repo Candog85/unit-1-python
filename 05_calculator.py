@@ -12,8 +12,11 @@ def input_1():
     except:
         ("Invalid number")
         input_1()
+input_1()
 
-num_2=float(input("Enter your second number: ").strip())
+def input_2():
+    global num_2
+    num_2=float(input("Enter your second number: ").strip())
 
 option = int(input(
     """
