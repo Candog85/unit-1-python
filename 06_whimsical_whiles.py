@@ -79,7 +79,7 @@ def task_4():
         #Prints incorrect password
         print("Incorrect password!")
 
-        #Reprompt
+        #Re-prompt
         guess=input("Guess the password: ")
     
     #When the loop is broken (guess=password), prints:
@@ -94,10 +94,24 @@ Write a program that calculates the sum of the digits of a given number using a 
 
 def task_5():
 
+    #Placeholder value for sum variable
     sum_var=0
 
+    #Takes input for number being used to calculate
     number=input("Enter an integer: ")
 
+    #If number cannot be made an integer, restarts function
+    try:
+        int(number)
+    except:
+        print("Invalid number")
+        task_5()
+
+    #If nothing goes wrong, number becomes a string again so it is iterable
+    finally:
+        str(number)
+
+    #For each character(number) in the string
     for digits in number:
         sum_var=sum_var+int(digits)
     
@@ -112,13 +126,13 @@ Write a program that prints the first n numbers in the Fibonacci sequence using 
 
 def task_6():
 
-    #List of the first 2 fibbonachi numbers
+    #List of the first 2 fibonacci numbers
     fibonacci=[0,1]
 
     #Takes input for the amount of numbers to be printed
-    n=int(input("How many fibbonachi numbers?"))
+    n=int(input("How many fibonacci numbers?"))
 
-    #For loop in range og 
+    #For loop in range of the number inputted, appends a new item to the list equal to the sum of the last two items in list 
     for x in range(n):
         fibonacci.append(fibonacci[-1]+fibonacci[-2])
     
