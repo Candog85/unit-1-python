@@ -1,10 +1,20 @@
 #Prints the intro
 print("""
 Welcome to the To-Do tracker!
+All changes are saved automatically
 """)
 
 #Placeholder for task list
 list=[]
+
+#Reads contents of the todo list saved in the text file
+with open("projects/todo/todo.txt", "r") as file:
+    list=file.readlines()
+
+#Function for updating list by writing to an external file.
+def update():
+    with open("projects/todo/todo.txt", "w") as file:
+            file.writelines(list)
 
 #Function for printing list
 def print_list():
@@ -32,7 +42,9 @@ def add():
     #Tries to append user input to list
     try:
         list.append(str(input("""What would you like to add?: 
-""")))
+"""))+"\n")
+        update()
+        
         
     #If theres an error, prints and restarts function
     except:
@@ -46,6 +58,7 @@ def delete():
     try:
         delete_choice=int(input("""Which task number to remove?: 
 """))
+        update()
     
     #If error, restarts function:
     except:
@@ -66,6 +79,7 @@ def clear_list():
 
     #Clears list and notifies user
     list.clear()
+    update()
     print("Your list haas been cleared!")
     print()
 
@@ -79,6 +93,7 @@ def prompt():
 1: Add task
 2: Remove task
 3: Clear list
+4: End program
                             
 :"""))
         print()
@@ -100,10 +115,12 @@ def prompt():
     elif choice==3:
         clear_list()
 
+    #If user inputs 4, ends the program using the quit function
+    elif choice==4:
+        print("Thank you for using the To-Do tracker!")
+        quit()
+
 #Makes program run indefinitely
 while True:
     print_list()
     prompt()
-
-
-
