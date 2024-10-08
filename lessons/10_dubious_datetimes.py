@@ -36,8 +36,8 @@ bday="11/03/2007"
 current_dt="10/07/2024"
 
 #Converts bday and current_dt into date using strptime
-print(datetime.strptime(bday, "%m/%d/%Y"))
-print(datetime.strptime(current_dt, "%m/%d/%Y"))
+print(datetime.strptime(bday, "%m/%d/%Y").date())
+print(datetime.strptime(current_dt, "%m/%d/%Y").date())
 
 """
 Excercise 4:
@@ -47,10 +47,6 @@ age using the datetime module.
 
 bday=input("What is your birthday? Use month/day/year format: ")
 
-byear=datetime.strptime(bday, "%Y")
+bday=(datetime.strptime(bday, "%m/%d/%Y").date())
 
-bmonth=datetime.strptime(bday, "%m")
-
-bday=datetime.strptime(bday, "%d")
-
-print(bday, byear, bday)
+print(date.year((date.now()-bday)))
