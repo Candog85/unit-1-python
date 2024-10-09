@@ -13,13 +13,16 @@ def options():
 )
     print()
 
-def update():
+def list():
 
     if contacts=={}:
+        print()
         print("Your contact list is empty")
         print()
+        prompt()
     
     else:
+        print()
         print("Contacts:")
         print()
         for contact in contacts:
@@ -29,8 +32,11 @@ def update():
 
 def add_contact():
     try:
+        print()
         contacts[str(input("What is the name of the contact?: "))]=str(input("What is the contact's number?: "))
-        update()
+        if len()
+        print()
+        prompt()        
     except:
         print("Invalid choice, try again")
         add_contact()
@@ -38,8 +44,9 @@ def add_contact():
 
 def delete_contact():
     try:
+        print()
         del contacts[str(input("What would you like to delete?: "))]
-        update()
+        prompt()
     except:
         print("Invalid choice, try again")
         delete_contact()
@@ -58,4 +65,7 @@ def prompt():
         add_contact()
     elif choice==2:
         delete_contact()
+    elif choice==3:
+        list()
+
 prompt()
