@@ -1,4 +1,8 @@
+#importing date, time, and datetime from datetime module
 from datetime import date,time,datetime
+
+#also imports the floor function from the math module for the last step
+from math import floor
 
 """
 Exercise 1:
@@ -45,8 +49,11 @@ Write a program that asks the user for their birthdate and calculates their curr
 age using the datetime module.
 """
 
+#defines bday as user input string
 bday=input("What is your birthday? Use month/day/year format: ")
 
+#redefines bday as a string parse time, using the month/day/full year format. Then uses date operator to isolate the date from the time
 bday=(datetime.strptime(bday, "%m/%d/%Y").date())
 
-print(date.year((date.now()-bday)))
+#prints the difference between the current date and bday, divides by 365 to determine the amount of years, and rounding down if their birthday hasn't passed yet
+print(floor((date.today()-bday).days/365))
