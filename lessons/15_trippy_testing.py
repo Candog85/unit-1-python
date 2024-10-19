@@ -72,7 +72,7 @@ def fibonacci(n):
     The nth Fibonacci number.
   """
 
-    assert n=int or n=
+  assert type(n)==int or type(n)==float
 
   if n <= 0:
     return 0
@@ -97,7 +97,12 @@ def is_valid_email(email):
   Returns:
     Boolean value if email is valid
   """
+
+  assert email is not None
+
   email_regex = r"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+"
+
+  assert type(re.match(email_regex, email) is not None)==bool
   return re.match(email_regex, email) is not None
 
  
